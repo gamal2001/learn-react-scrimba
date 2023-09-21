@@ -1,47 +1,68 @@
 /* Global CSS */
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Poppins;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
 }
-
 
 /* Navbar component CSS */
 nav {
-    fill: #FFF;
-    height: 70px;
-    padding: 23px 30px;
-    filter: drop-shadow(0px 2.9825618267059326px 7.456404209136963px rgba(0, 0, 0, 0.10));
+  fill: #fff;
+  height: 70px;
+  padding: 23px 30px;
+  filter: drop-shadow(
+    0px 2.9825618267059326px 7.456404209136963px rgba(0, 0, 0, 0.1)
+  );
 }
 
 nav > img {
-    width: 82.02px;
-    height: 25.352px;
+  width: 82.02px;
+  height: 25.352px;
 }
-
 
 /* Hero component CSS */
 
 section {
-    padding: 20px;
+  padding: 20px;
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero--photo {
-    align-self: center;
-    max-width: 400px;
+  align-self: center;
+  max-width: 400px;
 }
 
-.hero--header{
-    margin: 16px 0px;
+.hero--header {
+  margin: 16px 0px;
 }
 
-.hero--text{
-    margin-top: 0;
+.hero--text {
+  margin-top: 0;
+}
+
+/* Card component CSS */
+
+.card {
+  width: 175px;
+  font-size: 12px;
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.card--stats {
+  display: flex;
+  align-items: center;
+}
+
+.card--star {
+  height: 14px;
 }
