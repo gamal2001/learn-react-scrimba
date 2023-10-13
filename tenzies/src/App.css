@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: Karla;
+  font-family: 'Karla', sans-serif;
   margin: 0;
   background-color: #0b2434;
   display: flex;
@@ -13,13 +13,14 @@ body {
 }
 
 main {
-  width: 511px;
-  height: 517px;
+  width: 320px;
+  height: 320px;
   border-radius: 10px;
   background: #f5f5f5;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 .dies-container {
@@ -40,4 +41,22 @@ main {
   align-items: center;
   cursor: pointer;
   background-color: white;
+}
+
+.roll--dice{
+  width: 92.16px;
+  height: 35.84px;
+  background-color: #5035FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.roll--dice:focus {
+  outline: none;
+}
+
+.roll--dice:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
