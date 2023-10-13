@@ -1,18 +1,30 @@
 import "./App.css";
 import Die from "./components/Die";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
+import Confetti from 'react-confetti'
 
 export default function App() {
   const [dice, setDice] = useState(allNewDice());
+  const [tenzies, setTenzies] = useState(false);
 
-  function generateNewDie(){
+  useEffect(() => {
+    const allHeld = dice.every(die => die.isHeld === true);
+    const firstValue = dice[0].value;
+    const allSameValue = dice.every(die => die.value === firstValue)
+    if(allHeld && allSameValue){
+      console.log('You won!')
+      setTenzies(true)
+    }
+  }, [dice]);
+
+  function generateNewDie() {
     return {
       value: Math.ceil(Math.random() * 6),
       isHeld: false,
       id: nanoid(),
-    }
-  } 
+    };
+  }
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
@@ -22,11 +34,13 @@ export default function App() {
   }
 
   function rollDice() {
+    if (tenzies){
+      setDice(allNewDice())
+      setTenzies(false)
+    }
     setDice((prevDice) =>
       prevDice.map((dice) => {
-        return dice.isHeld === true
-          ? dice
-          : generateNewDie()
+        return dice.isHeld === true ? dice : generateNewDie();
       })
     );
   }
@@ -50,6 +64,7 @@ export default function App() {
 
   return (
     <main>
+      {tenzies && <Confetti />}
       <h1 className="title">Tenzies</h1>
       <p className="instructions">
         Roll until all dice are the same. Click each die to freeze it at its
@@ -57,7 +72,7 @@ export default function App() {
       </p>
       <div className="dice-container">{diceElements}</div>
       <button className="roll-dice" onClick={rollDice}>
-        Roll
+        {tenzies ? "New Game" : "Roll"}
       </button>
     </main>
   );
