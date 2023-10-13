@@ -1,6 +1,15 @@
 import "./App.css";
 import Die from "./components/Die";
 export default function App() {
+  function allNewDice(){
+    let newDice = []
+    for(let i = 0; i < 10; i++){
+      let randomNumber = Math.floor(Math.random() * 7)
+      newDice.push(randomNumber)
+    }
+    return newDice
+  }
+console.log(allNewDice())
   return (
     <main>
       <div className="dies-container">
