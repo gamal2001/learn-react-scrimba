@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: Karla;
   margin: 0;
   background-color: #0b2434;
   display: flex;
@@ -15,5 +16,28 @@ main {
   width: 511px;
   height: 517px;
   border-radius: 10px;
-  background: #F5F5F5;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dies-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
+.die-face {
+  font-size: 20.589px;
+  font-weight: 700;
+  width: 35.84px;
+  height: 35.84px;
+  border-radius: 3.813px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
 }
