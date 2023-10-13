@@ -3,10 +3,14 @@
 }
 
 body {
+  height: 100vh;
   margin: 0;
   background-color: #0B2434;
   padding: 20px;
   font-family: 'Karla', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
