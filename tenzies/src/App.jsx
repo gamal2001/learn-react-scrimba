@@ -15,13 +15,14 @@ export default function App() {
         newDice.push(Object.values({
           value: Math.ceil(Math.random() * 6), 
             isHeld: false,
+            id: nanoid()
         }))
     }
     return newDice
 }
 
-const diceElements = dice.map(( die, index) => {
-  return <Die key={index} value = {die}/>
+const diceElements = dice.map(( die) => {
+  return <Die isHeld ={die[1]} key={die[2]} value = {die[0]}/>
 })
 
   return (
